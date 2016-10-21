@@ -175,10 +175,9 @@ module.exports = exports = function(webot){
                       info: info.text
                   }
               });
-              console.log('!!!!!!!', res.getBody());
               console.log('!!!!!!!', JSON.parse(res.getBody('utf8')));
               console.log('!!!!!!!', JSON.parse(res.getBody('utf8')).body);
-              return "???";
+              return JSON.parse(res.getBody('utf8')).text;
           }
 
       }
