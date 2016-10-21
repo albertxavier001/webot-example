@@ -11,6 +11,8 @@ var geo2loc = require('../lib/support').geo2loc;
 
 var package_info = require('../package.json');
 
+var request = require('request');
+
 /**
  * 初始化路由规则
  */
@@ -166,7 +168,15 @@ module.exports = exports = function(webot){
           '退出': '退出聊天',
           '/.*/': function reguess(info) {
               info.rewait();
-              return "hehe";
+
+              request.post('http://www.tuling123.com/openapi/api', {form:{
+                  key: '9eb821ae8410475892632fb4a3f91170',
+                  info: info
+              }}, function (error, response, body) {
+                  console.log(body.text);
+              })
+
+              return ;
           }
       }
   });
