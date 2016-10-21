@@ -173,7 +173,8 @@ module.exports = exports = function(webot){
                   key: '9eb821ae8410475892632fb4a3f91170',
                   info: info.text
               }}, function (error, response, body) {
-                  console.log('return word', response);
+                  console.log('return word', body);
+                  console.log('return body word', body.text);
                   return response.data;
               })
 
