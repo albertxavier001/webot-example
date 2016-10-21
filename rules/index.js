@@ -168,10 +168,10 @@ module.exports = exports = function(webot){
           '退出': '退出聊天',
           '/.*/': function reguess(info) {
               info.rewait();
-
+              console.log('info = ', info.text);
               request.post('http://www.tuling123.com/openapi/api', {form:{
                   key: '9eb821ae8410475892632fb4a3f91170',
-                  info: info
+                  info: info.text
               }}, function (error, response, body) {
                   console.log(body.text);
                   return body.text;
