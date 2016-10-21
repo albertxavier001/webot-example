@@ -11,7 +11,7 @@ var geo2loc = require('../lib/support').geo2loc;
 
 var package_info = require('../package.json');
 
-var request = require('request');
+var request = require('sync-request');
 
 /**
  * 初始化路由规则
@@ -169,18 +169,18 @@ module.exports = exports = function(webot){
           '/.*/': function reguess(info) {
               info.rewait();
               console.log('info = ', info.text);
-              text = request.post('http://www.tuling123.com/openapi/api', {form:{
-                  key: '9eb821ae8410475892632fb4a3f91170',
-                  info: info.text
-              }}, function (error, response, body) {
-                  console.log('return word', body);
-                  data = JSON.parse(body);
-                  console.log("data = ", data.text);
-                  return data.text;
-              })
-
-              return text;
+              var res = request('POST', 'http://www.tuling123.com/openapi/api', {
+                  json: {
+                      key: '9eb821ae8410475892632fb4a3f91170',
+                      info: info.text
+                  }
+              });
+              console.log('!!!!!!!', res.getBody());
+              console.log('!!!!!!!', JSON.parse(res.getBody('utf8')));
+              console.log('!!!!!!!', JSON.parse(res.getBody('utf8')).body);
+              return "???";
           }
+
       }
   });
 

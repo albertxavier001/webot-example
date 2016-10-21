@@ -7,8 +7,11 @@ var request = require('request');
 // })
 
 //https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=shenme&oq=1&rsv_pq=bf6cdea800005074&rsv_t=ce7aLrKNhXXToh3ZNHjXCesRp5iBWCJiqXX%2BpbszagINDIaljVZ0Bk3mAMQ&rqlang=cn&rsv_enter=1&inputT=1496&rsv_sug3=9&rsv_sug1=4&rsv_sug7=100&rsv_sug2=0&rsv_sug4=1872
-request.get('http://baidu.com/s', {form:{
+var x = request.get('http://baidu.com/s', {form:{
     wd: 'shenme'
 }}, function (error, response, body) {
-    console.log(body);
+    // console.log(body);
+    return "hahaahah";
 })
+
+console.log("x = ", x);
