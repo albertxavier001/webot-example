@@ -162,7 +162,7 @@ module.exports = exports = function(webot){
       description: '和机器人聊天',
       pattern: 'tuling',
       handler: function (info) {
-          return '开始聊天吧';
+          return '开始聊天吧, 退出请输入‘退出’';
       },
       replies: {
           '退出': '退出聊天',
@@ -174,9 +174,10 @@ module.exports = exports = function(webot){
                   info: info
               }}, function (error, response, body) {
                   console.log(body.text);
+                  return body.text;
               })
 
-              return ;
+              return "???";
           }
       }
   });
