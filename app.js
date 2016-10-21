@@ -38,7 +38,7 @@ app.use(express.session({
 // 请参考 http://expressjs.com/2x/guide.html#session-support
 
 // 在环境变量提供的 $PORT 或 3000 端口监听
-var port = process.env.PORT || 80;
+var port = process.env.PORT || 26881;
 app.listen(port, function(){
   log("Listening on %s", port);
 });
