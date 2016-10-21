@@ -13,7 +13,6 @@ var appsecret = '0f3ef72de0ee2ff6405064f5809d9604';
 var WechatAPI = require('wechat-api');
 var token = 'albertxavierALBERT987';
 var encodingAESKey = 'iXbe1shwqbPaY5SI0p55UVIbVF241WaBnIeiw9mckvn';
-
 var api = new WechatAPI(appid, appsecret);
 
 // var wechat = require('wechat');
@@ -48,13 +47,14 @@ var menu =
  ]\
 }\
 ';
-
+var menuJson =   JSON.parse(menu);
+console.log('menu json = ', menuJson);
 // app.use(express.query());
 // app.use('/', function (req, res, next) {
 //
 // });
 
-api.createMenu(menu, function (err, res) {
+api.createMenu(menuJson, function (err, res) {
     if (err.errcode!=0) {
         console.log("err msg = ", err.errmsg);
     }
