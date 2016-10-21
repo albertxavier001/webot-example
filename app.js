@@ -39,7 +39,10 @@ var menu =
 }\
 ';
 api.createMenu(menu, function (err, res) {
-    
+    if (err.errcode!=0) {
+        console.log("err msg = ", err.errmsg);
+    }
+    console.log("result = ", res);
 });
 
 
