@@ -156,6 +156,20 @@ module.exports = exports = function(webot){
     // }]
   });
 
+  webot.set('tuling') {
+      description: '和机器人聊天',
+      pattern: 'tuling',
+      handler: function (info) {
+          return '开始聊天吧';
+      }
+      replies: {
+          '退出': '退出聊天',
+          '/.*/': function reguess(info) {
+              return "hehe";
+          }
+      }
+  }
+
   // 定义一个 wait rule
   webot.waitRule('wait_guess', function(info) {
     var r = Number(info.text);
@@ -276,6 +290,9 @@ module.exports = exports = function(webot){
       return '请等待5秒后回复';
     }
   });
+
+
+
 
   /**
    * Wait rules as lists
