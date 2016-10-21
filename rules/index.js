@@ -165,6 +165,7 @@ module.exports = exports = function(webot){
       replies: {
           '退出': '退出聊天',
           '/.*/': function reguess(info) {
+              info.rewait();
               return "hehe";
           }
       }
