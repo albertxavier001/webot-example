@@ -161,14 +161,14 @@ module.exports = exports = function(webot){
       pattern: 'tuling',
       handler: function (info) {
           return '开始聊天吧';
-      }
+      },
       replies: {
           '退出': '退出聊天',
           '/.*/': function reguess(info) {
               return "hehe";
           }
       }
-  }
+  };
 
   // 定义一个 wait rule
   webot.waitRule('wait_guess', function(info) {
