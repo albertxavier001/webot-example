@@ -169,17 +169,17 @@ module.exports = exports = function(webot){
           '/.*/': function reguess(info) {
               info.rewait();
               console.log('info = ', info.text);
-              request.post('http://www.tuling123.com/openapi/api', {form:{
+              text = request.post('http://www.tuling123.com/openapi/api', {form:{
                   key: '9eb821ae8410475892632fb4a3f91170',
                   info: info.text
               }}, function (error, response, body) {
                   console.log('return word', body);
                   data = JSON.parse(body);
-                  console.log("data = ", data);
-                  return data;
+                  console.log("data = ", data.text);
+                  return data.text;
               })
 
-              return "???";
+              return text;
           }
       }
   });
