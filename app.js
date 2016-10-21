@@ -4,6 +4,7 @@ var webot = require('weixin-robot');
 var log = require('debug')('webot-example:log');
 var verbose = require('debug')('webot-example:verbose');
 
+var api = require('wechat-api');
 
 var appid = 'wx0044d409081e3e83';
 var appsecret = '0f3ef72de0ee2ff6405064f5809d9604';
