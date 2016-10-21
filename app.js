@@ -20,9 +20,9 @@ require('./rules')(webot);
 webot2.set('hello', 'hi.');
 
 // 启动机器人, 接管 web 服务请求
-webot.watch(app, { token: wx_token, path: '/wechat' });
+// webot.watch(app, { token: wx_token, path: '/wechat' });
 // 若省略 path 参数，会监听到根目录
-// webot.watch(app, { token: wx_token });
+webot.watch(app, { token: wx_token });
 
 // 后面指定的 path 不可为前面实例的子目录
 webot2.watch(app, { token: wx_token2, path: '/wechat_2' });
