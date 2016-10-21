@@ -33,6 +33,7 @@ module.exports = exports = function(webot){
         url: 'https://github.com/node-webot/webot-example',
         description: [
           '你可以试试以下指令:',
+            'tuling : 和图灵机器人对话',
             'game : 玩玩猜数字的游戏吧',
             's+空格+关键词 : 我会帮你百度搜索喔',
             's+空格+nde : 可以试试我的纠错能力',
