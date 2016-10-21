@@ -20,12 +20,12 @@ require('./rules')(webot);
 webot2.set('hello', 'hi.');
 
 // 启动机器人, 接管 web 服务请求
-webot.watch(app, { token: wx_token, path: '/home/albertxavier/wechat' });
+webot.watch(app, { token: wx_token, path: '/wechat' });
 // 若省略 path 参数，会监听到根目录
 // webot.watch(app, { token: wx_token });
 
 // 后面指定的 path 不可为前面实例的子目录
-webot2.watch(app, { token: wx_token2, path: '/home/albertxavier/wechat_2' });
+webot2.watch(app, { token: wx_token2, path: '/wechat_2' });
 
 // 如果需要 session 支持，sessionStore 必须放在 watch 之后
 app.use(express.cookieParser());
@@ -38,17 +38,17 @@ app.use(express.session({
 // 请参考 http://expressjs.com/2x/guide.html#session-support
 
 // 在环境变量提供的 $PORT 或 3000 端口监听
-// var port = process.env.PORT || 80;
-// app.listen(port, function(){
-//   log("Listening on %s", port);
-// });
-//
-// // 微信接口地址只允许服务放在 80 端口
-// // 所以需要做一层 proxy
-// app.enable('trust proxy');
+var port = process.env.PORT || 80;
+app.listen(port, function(){
+  log("Listening on %s", port);
+});
+
+// 微信接口地址只允许服务放在 80 端口
+// 所以需要做一层 proxy
+app.enable('trust proxy');
 
 // 当然，如果你的服务器允许，你也可以直接用 node 来 serve 80 端口
-app.listen(80);
+// app.listen(80);
 
 if(!process.env.DEBUG){
   console.log("set env variable `DEBUG=webot-example:*` to display debug info.");
