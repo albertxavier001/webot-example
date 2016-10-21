@@ -168,7 +168,7 @@ module.exports = exports = function(webot){
       },
       replies: {
           '退出': '已退出聊天',
-          '幸福在哪里': '幸福就在杭州酷儿',
+          '幸福在哪里': '幸福就在杭州',
           '/.*/': function reguess(info) {
               info.rewait();
               console.log('info = ', info.text);
