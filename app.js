@@ -1,15 +1,24 @@
 var express = require('express');
+var app = express();
+
 var webot = require('weixin-robot');
 
 var log = require('debug')('webot-example:log');
 var verbose = require('debug')('webot-example:verbose');
 
-var api = require('wechat-api');
+var WechatAPI = require('wechat-api');
 
 var appid = 'wx0044d409081e3e83';
 var appsecret = '0f3ef72de0ee2ff6405064f5809d9604';
 var WechatAPI = require('wechat-api');
+var token = 'albertxavierALBERT987';
+var encodingAESKey = 'iXbe1shwqbPaY5SI0p55UVIbVF241WaBnIeiw9mckvn';
+
 var api = new WechatAPI(appid, appsecret);
+
+// var wechat = require('wechat');
+
+
 
 // create menu
 var menu =
@@ -39,6 +48,12 @@ var menu =
  ]\
 }\
 ';
+
+// app.use(express.query());
+// app.use('/', function (req, res, next) {
+//
+// });
+
 api.createMenu(menu, function (err, res) {
     if (err.errcode!=0) {
         console.log("err msg = ", err.errmsg);
@@ -48,10 +63,9 @@ api.createMenu(menu, function (err, res) {
 
 
 // 启动服务
-var app = express();
 
 // 实际使用时，这里填写你在微信公共平台后台填写的 token
-var wx_token = process.env.WX_TOKEN || 'albertxavierALBERT111';
+var wx_token = process.env.WX_TOKEN || token;
 // var wx_token2 = process.env.WX_TOKEN_2 || 'albertxavierALBERT111';
 
 // 建立多个实例，并监听到不同 path ，
