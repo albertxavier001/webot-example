@@ -20,41 +20,41 @@ var api = new WechatAPI(appid, appsecret);
 
 
 // create menu
-var menu =
-'\
-{\
- "button":[\
-   {\
-     "type":"click",\
-     "name":"今日歌曲",\
-     "key":"V1001_TODAY_MUSIC"\
-   },\
-   {\
-     "name":"菜单",\
-     "sub_button":[\
-       {\
-         "type":"view",\
-         "name":"搜索",\
-         "url":"http://www.soso.com/"\
-       },\
-       {\
-         "type":"click",\
-         "name":"赞一下我们",\
-         "key":"V1001_GOOD"\
-       }]\
-     }]\
-   }\
- ]\
-}\
-';
-var menuJson =   JSON.parse(menu);
-console.log('menu json = ', menuJson);
+var menu = {
+     "button":[
+     {
+          "type":"click",
+          "name":"今日歌曲",
+          "key":"V1001_TODAY_MUSIC"
+      },
+      {
+           "name":"菜单",
+           "sub_button":[
+           {
+               "type":"view",
+               "name":"搜索",
+               "url":"http://www.soso.com/"
+            },
+            {
+               "type":"view",
+               "name":"视频",
+               "url":"http://v.qq.com/"
+            },
+            {
+               "type":"click",
+               "name":"赞一下我们",
+               "key":"V1001_GOOD"
+            }]
+       }]
+ };
+// var menuJson =   JSON.parse(menu);
+console.log('menu json = ', menu);
 // app.use(express.query());
 // app.use('/', function (req, res, next) {
 //
 // });
 
-api.createMenu(menuJson, function (err, res) {
+api.createMenu(menu, function (err, res) {
     if (err.errcode!=0) {
         console.log("err msg = ", err.errmsg);
     }
