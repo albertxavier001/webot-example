@@ -8,8 +8,8 @@ var verbose = require('debug')('webot-example:verbose');
 var app = express();
 
 // 实际使用时，这里填写你在微信公共平台后台填写的 token
-var wx_token = process.env.WX_TOKEN || 'albertxavier';
-var wx_token2 = process.env.WX_TOKEN_2 || 'albertxavier';
+var wx_token = process.env.WX_TOKEN || 'albertxavierALBERT111';
+var wx_token2 = process.env.WX_TOKEN_2 || 'albertxavierALBERT111';
 
 // 建立多个实例，并监听到不同 path ，
 var webot2 = new webot.Webot();
@@ -38,13 +38,13 @@ app.use(express.session({
 // 请参考 http://expressjs.com/2x/guide.html#session-support
 
 // 在环境变量提供的 $PORT 或 3000 端口监听
-// var port = process.env.PORT || 26881;
+// var port = process.env.PORT || 80;
 // app.listen(port, function(){
 //   log("Listening on %s", port);
 // });
-
-// 微信接口地址只允许服务放在 80 端口
-// 所以需要做一层 proxy
+//
+// // 微信接口地址只允许服务放在 80 端口
+// // 所以需要做一层 proxy
 // app.enable('trust proxy');
 
 // 当然，如果你的服务器允许，你也可以直接用 node 来 serve 80 端口
