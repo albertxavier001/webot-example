@@ -8,8 +8,8 @@ var verbose = require('debug')('webot-example:verbose');
 var app = express();
 
 // 实际使用时，这里填写你在微信公共平台后台填写的 token
-var wx_token = process.env.WX_TOKEN || 'keyboardcat123';
-var wx_token2 = process.env.WX_TOKEN_2 || 'weixinToken2';
+var wx_token = process.env.WX_TOKEN || 'albertxavier';
+var wx_token2 = process.env.WX_TOKEN_2 || 'albertxavier';
 
 // 建立多个实例，并监听到不同 path ，
 var webot2 = new webot.Webot();
@@ -20,12 +20,12 @@ require('./rules')(webot);
 webot2.set('hello', 'hi.');
 
 // 启动机器人, 接管 web 服务请求
-webot.watch(app, { token: wx_token, path: '/wechat' });
+webot.watch(app, { token: wx_token, path: '/home/albertxavier/wechat' });
 // 若省略 path 参数，会监听到根目录
 // webot.watch(app, { token: wx_token });
 
 // 后面指定的 path 不可为前面实例的子目录
-webot2.watch(app, { token: wx_token2, path: '/wechat_2' });
+webot2.watch(app, { token: wx_token2, path: '/home/albertxavier/wechat_2' });
 
 // 如果需要 session 支持，sessionStore 必须放在 watch 之后
 app.use(express.cookieParser());
