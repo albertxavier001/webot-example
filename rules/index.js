@@ -175,6 +175,7 @@ module.exports = exports = function(webot){
               }}, function (error, response, body) {
                   console.log('return word', body);
                   console.log('return body word', body.text);
+                  console.log('return body word2', body["text"]);
                   return response.data;
               })
 
