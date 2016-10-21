@@ -156,7 +156,7 @@ module.exports = exports = function(webot){
     // }]
   });
 
-  webot.set('tuling') {
+  webot.set('tuling', {
       description: '和机器人聊天',
       pattern: 'tuling',
       handler: function (info) {
@@ -168,7 +168,7 @@ module.exports = exports = function(webot){
               return "hehe";
           }
       }
-  };
+  });
 
   // 定义一个 wait rule
   webot.waitRule('wait_guess', function(info) {
