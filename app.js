@@ -4,6 +4,45 @@ var webot = require('weixin-robot');
 var log = require('debug')('webot-example:log');
 var verbose = require('debug')('webot-example:verbose');
 
+
+var appid = 'wx0044d409081e3e83';
+var appsecret = '0f3ef72de0ee2ff6405064f5809d9604';
+var WechatAPI = require('wechat-api');
+var api = new WechatAPI(appid, appsecret);
+
+// create menu
+var menu =
+'\
+{\
+ "button":[\
+   {\
+     "type":"click",\
+     "name":"今日歌曲",\
+     "key":"V1001_TODAY_MUSIC"\
+   },\
+   {\
+     "name":"菜单",\
+     "sub_button":[\
+       {\
+         "type":"view",\
+         "name":"搜索",\
+         "url":"http://www.soso.com/"\
+       },\
+       {\
+         "type":"click",\
+         "name":"赞一下我们",\
+         "key":"V1001_GOOD"\
+       }]\
+     }]\
+   }\
+ ]\
+}\
+';
+api.createMenu(menu, function (err, res) {
+    
+});
+
+
 // 启动服务
 var app = express();
 
