@@ -51,5 +51,5 @@ app.enable('trust proxy');
 // app.listen(80);
 
 if(!process.env.DEBUG){
-  console.log("set env variable `DEBUG=webot-example:*` to display debug info.");
+  console.log("run as ` PORT=80 DEBUG=webot-example:* WX_TOKEN=albertxavierALBERT987 n as 6.9.1 app.js`");
 }

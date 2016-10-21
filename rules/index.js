@@ -162,10 +162,12 @@ module.exports = exports = function(webot){
       description: '和机器人聊天',
       pattern: 'tuling',
       handler: function (info) {
-          return '开始聊天吧, 退出请输入‘退出’';
+          return '开始聊天吧, 退出请输入‘退出’\n'
+          +'ps：也可以自定义，比如输入‘幸福在哪里’';
       },
       replies: {
-          '退出': '退出聊天',
+          '退出': '已退出聊天',
+          '幸福在哪里': '幸福就在杭州酷儿',
           '/.*/': function reguess(info) {
               info.rewait();
               console.log('info = ', info.text);
@@ -175,8 +177,6 @@ module.exports = exports = function(webot){
                       info: info.text
                   }
               });
-              console.log('!!!!!!!', JSON.parse(res.getBody('utf8')));
-              console.log('!!!!!!!', JSON.parse(res.getBody('utf8')).body);
               return JSON.parse(res.getBody('utf8')).text;
           }
 
