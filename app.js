@@ -17,7 +17,7 @@ var wx_token = process.env.WX_TOKEN || 'albertxavierALBERT111';
 // 载入webot1的回复规则
 require('./rules')(webot);
 // 为webot2也指定规则
-// webot2.set('hello', 'hi.');
+webot.set('1', 'hi..');
 
 // 启动机器人, 接管 web 服务请求
 // webot.watch(app, { token: wx_token, path: '/wechat' });
